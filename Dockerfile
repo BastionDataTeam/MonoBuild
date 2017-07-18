@@ -20,7 +20,9 @@ RUN git clone https://github.com/CoiniumServ/CoiniumServ.git ./CoiniumServ &&\
  
 # RUN nuget restore ./CoiniumServ/build/CoiniumServ.sln 
 
-RUN xbuild ./CoiniumServ/build/CoiniumServ.sln # /p:Configuration="Release"
+RUN xbuild ./CoiniumServ/build/CoiniumServ.sln 
+
+# /p:Configuration="Release"
 
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
