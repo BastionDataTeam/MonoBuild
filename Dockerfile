@@ -5,7 +5,7 @@ FROM mono:3.12
 MAINTAINER Jeffrey Ness "jeffrey.ness@...."
 
 # The TCP ports this Docker container exposes the the host.
-EXPOSE 8081
+EXPOSE 80
 
 # Change to our artifact directory
 WORKDIR /CoiniumServ
