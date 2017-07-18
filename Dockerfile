@@ -8,14 +8,14 @@ MAINTAINER Jeffrey Ness "jeffrey.ness@...."
 EXPOSE 8081
 
 # Change to our artifact directory
-WORKDIR ./CoiniumServ
+WORKDIR /CoiniumServ
 
 RUN apt-get -y update &&\
     apt-get -y upgrade &&\
     apt-get install -y --force-yes wget &&\
     apt-get clean
 
-COPY CoiniumCopy.sh ./
+COPY CoiniumCopy.sh /
 
 # Entry point should be mono binary
 ENTRYPOINT /bin/bash
