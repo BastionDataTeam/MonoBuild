@@ -15,8 +15,6 @@ RUN apt-get -y update &&\
     apt-get install -y --force-yes wget &&\
     apt-get clean
 
-RUN mkdir ./CoiniumServ
-
 COPY CoiniumCopy.sh ./
 
 # Entry point should be mono binary
