@@ -18,7 +18,7 @@ RUN git clone https://github.com/CoiniumServ/CoiniumServ.git ./CoiniumServ &&\
     git submodule update &&\
     mozroots --import --ask-remove 
  
-# RUN nuget restore ./CoiniumServ/build/CoiniumServ.sln 
+RUN nuget restore ./CoiniumServ/build/CoiniumServ.sln 
 
 RUN xbuild ./CoiniumServ/build/CoiniumServ.sln 
 
