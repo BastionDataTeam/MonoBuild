@@ -1,0 +1,54 @@
+{
+    "stack": {
+        "name": "CoiniumPadServ.com",
+        "nodes": [
+            {
+                "location": "eu",
+                "address": "10.0.0.208",
+                "default": true
+            }
+        ]
+    },
+    "statistics": {
+        "updateInterval": 60,
+        "hashrateWindow": 300
+    },
+    "website": {
+        "enabled": true,
+        "bind": "10.0.0.208",
+        "port": 80,
+        "template": "default",
+        "feed": "",
+        "backend": {
+            "metrics": {
+                "enabled": false
+            }
+        }
+    },
+    "logging": {
+        "root": "logs",
+        "targets": [
+            {
+                "enabled": true,
+                "type": "file",
+                "filename": "server.log",
+                "rolling": false,
+                "level": "information"
+            },
+            {
+                "enabled": true,
+                "type": "file",
+                "filename": "debug.log",
+                "rolling": false,
+                "level": "verbose"
+            },
+            {
+                "enabled": false,
+                "type": "packet",
+                "filename": "packet.log",
+                "rolling": false,
+                "level": "verbose"
+            }
+        ]
+    }
+} 
