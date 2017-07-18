@@ -9,7 +9,7 @@ EXPOSE 8081
 
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
-RUN apt-get install -y wget
+RUN apt-get -y install wget
 RUN mkdir ./CoiniumServ
 COPY CoiniumCopy.sh ./
 
