@@ -10,7 +10,8 @@ EXPOSE 8081
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
 
-ADD ./CoiniumCopy.sh
+RUN mkdir ./CoiniumServ
+COPY CoiniumCopy.sh ./CoiniumServ/
 
 # Entry point should be mono binary
 ENTRYPOINT /bin/bash
