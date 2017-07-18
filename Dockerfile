@@ -14,8 +14,8 @@ RUN apt-get install -y git \
 && git submodule init \
 && git submodule update \
 && mozroots --import --ask-remove \
-&& nuget restore ./CoiniumServ/build/CoiniumServ.sln \
-&& xbuild ./CoiniumServ/build/CoiniumServ.sln /p:Configuration="Release"
+RUN nuget restore ./CoiniumServ/build/CoiniumServ.sln \
+RUN xbuild ./CoiniumServ/build/CoiniumServ.sln /p:Configuration="Release"
 
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
