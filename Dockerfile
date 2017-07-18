@@ -9,9 +9,9 @@ EXPOSE 8081
 
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
-
+RUN apt-get install -y wget
 RUN mkdir ./CoiniumServ
-COPY CoiniumCopy.sh ./CoiniumServ/
+COPY CoiniumCopy.sh ./
 
 # Entry point should be mono binary
 ENTRYPOINT /bin/bash
