@@ -7,9 +7,10 @@ MAINTAINER Jeffrey Ness "jeffrey.ness@...."
 # The TCP ports this Docker container exposes the the host.
 EXPOSE 8081
 
-
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
+
+ADD ./CoiniumCopy.sh
 
 # Entry point should be mono binary
 ENTRYPOINT /bin/bash
