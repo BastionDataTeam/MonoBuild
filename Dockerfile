@@ -8,18 +8,14 @@ MAINTAINER Jeffrey Ness "jeffrey.ness@...."
 EXPOSE 8081
 
 RUN apt-get install -y git \
-  && rm -rf /var/lib/apt/lists/*
-
-# Add the project tarball to Docker container
-RUN git clone https://github.com/CoiniumServ/CoiniumServ.git ./CoiniumServ \
+&& rm -rf /var/lib/apt/lists/* \
+&& git clone https://github.com/CoiniumServ/CoiniumServ.git ./CoiniumServ \
 && cd ./CoiniumServ \
 && git submodule init \
 && git submodule update \
-&& mozroots --import --ask-remove
-
-# Build our project
-RUN nuget restore ./CoiniumServ/build/CoiniumServ.sln
-RUN xbuild ./CoiniumServ/build/CoiniumServ.sln /p:Configuration="Release"
+&& mozroots --import --ask-remove \
+&& nuget restore ./CoiniumServ/build/CoiniumServ.sln \
+&& xbuild ./CoiniumServ/build/CoiniumServ.sln /p:Configuration="Release"
 
 # Change to our artifact directory
 WORKDIR ./CoiniumServ
