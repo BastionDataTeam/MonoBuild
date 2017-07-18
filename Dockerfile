@@ -7,8 +7,7 @@ MAINTAINER Jeffrey Ness "jeffrey.ness@...."
 # The TCP ports this Docker container exposes the the host.
 EXPOSE 8081
 
-RUN apt-get update \
-  && apt-get install -y curl git \
+RUN apt-get install -y git \
   && rm -rf /var/lib/apt/lists/*
 
 # Add the project tarball to Docker container
