@@ -8,8 +8,8 @@ MAINTAINER Jeffrey Ness "jeffrey.ness@...."
 EXPOSE 8081
 
 RUN apt-get install -y git \
-&& rm -rf /var/lib/apt/lists/* \
-&& git clone https://github.com/CoiniumServ/CoiniumServ.git ./CoiniumServ \
+&& rm -rf /var/lib/apt/lists/* 
+RUN git clone https://github.com/CoiniumServ/CoiniumServ.git ./CoiniumServ \
 && cd ./CoiniumServ \
 && git submodule init \
 && git submodule update \
